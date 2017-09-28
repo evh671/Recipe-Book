@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  private strArray : string[] = ['oranges','apples'];
+
+  isRecipesNav:boolean=true;
+
+  onHeaderNavClicked(navSelection:string)
+  {
+    if (navSelection!=='recipes')
+    {
+      this.isRecipesNav=false;
+      this.strArray.push('bananas');
+    }
+    else
+    {
+      this.isRecipesNav=true;
+      this.strArray.push('strawberries');
+    }
+
+  }
+
 }
